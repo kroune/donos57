@@ -3,10 +3,15 @@ plugins {
     id("com.google.devtools.ksp") version "2.0.20-1.0.25"
     id("eu.vendeli.telegram-bot") version "7.3.1"
     id("org.jetbrains.kotlin.plugin.serialization") version "2.0.20"
+    application
 }
 
 group = "io.github.kroune"
 version = "1.0-SNAPSHOT"
+
+application {
+    mainClass.set("MainKt")
+}
 
 repositories {
     mavenCentral()
