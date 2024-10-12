@@ -13,7 +13,7 @@ object Identifier {
     init {
         val configDir = File(CONFIGURATION_DIRECTORY)
         configDir.mkdirs()
-        val configFile = File(CONFIGURATION_DIRECTORY, "config.json")
+        val configFile = File(CONFIGURATION_DIRECTORY, "data.json")
         if (configFile.exists()) {
             Json.decodeFromString<Configuration>(configFile.readText()).let {
                 identificators = it.identificators
