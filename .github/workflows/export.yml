@@ -13,4 +13,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: data.json
-          path: data/data.json
+          path: /home/olowo/donos57/data/data.json
