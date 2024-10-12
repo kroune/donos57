@@ -24,7 +24,7 @@ suspend fun donos(update: MessageUpdate, bot: TelegramBot) {
         message { "Этот бот анонимен и не предусмотрен для работы в группах" }
         return
     }
-    message { "Здравствуйте, отправьте текст вашего даноса" }.send(update.message.chat, bot)
+    message { "Напишите текст доноса. Обязательно укажите, против кого он. При необходимости приложите фотосвидетельства." }.send(update.message.chat, bot)
     bot.inputListener.set(update.user, "danosInProgress")
 }
 
@@ -34,7 +34,7 @@ suspend fun donosInProgress(update: MessageUpdate, user: User, bot: TelegramBot)
         message { "Этот бот анонимен и не предусмотрен для работы в группах" }
         return
     }
-    message { "Ваш данос был отправлен в органы, спасибо за содействие" }.send(update.message.chat, bot)
+    message { "Спасибо за бдительность, опричники оповещены." }.send(update.message.chat, bot)
     val messageCopyResult = copyMessage(update.message.chat, update.message.messageId).sendReturning(DANOS_GROUP, bot).await()
     messageCopyResult.onFailure {
         alert("sending message failed ${it.errorCode} ${it.description}}")
