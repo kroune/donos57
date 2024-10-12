@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    timeout-minutes: 525600
     runs-on: self-hosted
     steps:
       - name: Checkout the repository
