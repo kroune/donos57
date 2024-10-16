@@ -1,0 +1,12 @@
+name: Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    timeout-minutes: 525600
+    runs-on: self-hosted
+    steps:
+      - name: Run
+        run: ls -hlas
