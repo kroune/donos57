@@ -9,4 +9,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Run
-        run: ls -hlas
+        run: ls -hlas /
